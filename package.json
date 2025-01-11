@@ -1,0 +1,40 @@
+{
+  "name": "sc-gallery",
+  "version": "1.0.0",
+  "description": "A lightweight JavaScript plugin for image sliders. Simple to install, configure, and use: navigate images with a single click.",
+  "main": "index.js",
+  "scripts": {
+    "build:js": "terser src/sc-gallery.js -o dist/sc-gallery.min.js --compress --mangle",
+    "build:css": "cleancss -o dist/sc-gallery.min.css src/sc-gallery.css",
+    "build": "npm run build:js && npm run build:css",
+    "start": "serve src"
+  },
+  "keywords": [
+    "gallery",
+    "slider",
+    "image-slider",
+    "image-gallery",
+    "javascript",
+    "single-click",
+    "sc-gallery",
+    "plugin",
+    "lightweight",
+    "responsive",
+    "simple",
+    "minimalist",
+    "photo-gallery",
+    "carousel",
+    "web",
+    "frontend",
+    "click-navigation",
+    "image-navigation",
+    "user-friendly"
+  ],
+  "author": "tpomante",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "serve": "^14.2.4",
+    "terser": "^5.37.0"
+  }
+}
