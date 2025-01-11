@@ -1,0 +1,1 @@
+.sc-gallery{margin:auto;height:60vh;width:30vw;cursor:pointer}@media screen and (max-width:749px){.sc-gallery{height:70vh;width:90vw}}.sc-gallery img{display:none;width:100%;height:100%;object-fit:contain}.sc-gallery img.active{display:block}
