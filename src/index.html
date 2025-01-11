@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sc-gallery.js</title>
+    <link rel="stylesheet" type="text/css" href="./sc-gallery.css">
+    <script src="./sc-gallery.js"></script>
+    <style>
+        :root {
+            --bg: #fbfbfb;
+            --fg: #0d0d0d;
+            --link: #0b71dc;
+            --fg-lighter: color-mix(in srgb, var(--fg) 85%, var(--bg) 15%);
+            --bg-darker: color-mix(in srgb, var(--bg) 85%, var(--fg) 15%);
+        }
+        body {
+            font-family: monospace;
+            padding: 1rem;
+            margin: 2rem 25% 10rem;
+            line-height: 1.2rem;
+            min-width: 350px;
+            background: var(--bg);
+            color: var(--fg);
+        }
+
+        @media screen and (max-width: 749px) {
+            body {
+                margin: 0;
+            }
+        }
+
+        a {
+            color: var(--link);
+        }
+
+        pre {
+            background: var(--fg-lighter);
+            color: var(--bg-darker);
+            padding: 1rem;
+            border-radius: 5px;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            padding: 1rem;
+            background-color: var(--bg);
+            color: var(--link);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--link);
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 1rem .5rem;
+            border-radius: 50%;
+            line-height: .4rem;
+        }
+
+        .grid .toggle-btn {
+            border-color: var(--link);
+            background-color: var(--link);
+            color: var(--bg);
+        }
+
+
+        pre, p, .sc-gallery {
+            margin-bottom: 3rem;
+        }
+
+        .grid .sc-gallery {
+            background-color: transparent;
+            background-image: linear-gradient(to right, var(--bg-darker) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--bg-darker) 1px, transparent 1px);
+            background-size: 20px 20px;
+            border-bottom: 1px solid var(--bg-darker);
+            border-right: 1px solid var(--bg-darker);
+        }
+
+        /* CSS for Demo 2 */
+        .sc-gallery.custom-1 {
+            width: 250px;
+            height: 250px;
+            padding: 1rem;
+        }
+
+        @media screen and (max-width: 749px) {
+            .sc-gallery.custom-1 {
+                width: 50vw;
+                height: 50vw;
+            }
+        }
+    </style>
+</head>
+<body class="grid">
+<h1>sc-gallery.js</h1>
+<p>The sc-gallery.js is an easily configurable plugin for image galleries. Click to show next image adapted to main
+    container.</p>
+<h2>Demo 1</h2>
+<p>In this demo case, a gallery with different size images.</p>
+<h3>Gallery</h3>
+<div class="sc-gallery">
+    <img src="./img/turtle-shadow.jpg" alt="turtle-shadow">
+    <img src="./img/crimson-sentinel.jpg" alt="crimson-sentinel">
+    <img src="./img/neon-vanguard.jpg" alt="neon-vanguard">
+    <img src="./img/raccoon-guardian.jpg" alt="raccoon-guardian">
+    <img src="./img/cardboard-crusader.jpg" alt="cardboard-crusader">
+</div>
+<h3>Code</h3>
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;sc-gallery.css&quot;&gt;
+    &lt;script src=&quot;sc-gallery.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;sc-gallery&quot;&gt;
+    &lt;img src=&quot;img/turtle-shadow.jpg&quot; alt=&quot;turtle-shadow&quot;&gt;
+    &lt;img src=&quot;img/crimson-sentinel.jpg&quot; alt=&quot;crimson-sentinel&quot;&gt;
+    &lt;img src=&quot;img/neon-vanguard.jpg&quot; alt=&quot;neon-vanguard&quot;&gt;
+    &lt;img src=&quot;img/raccoon-guardian.jpg&quot; alt=&quot;raccoon-guardian&quot;&gt;
+    &lt;img src=&quot;img/cardboard-crusader.jpg&quot; alt=&quot;cardboard-crusader&quot;&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<h2>Demo 2</h2>
+<p>In this demo case, a gallery with same size images and custom style.</p>
+<h3>Gallery</h3>
+<div class="sc-gallery custom-1">
+    <img src="./img/neon-vanguard-square.jpg" alt="neon-vanguard">
+    <img src="./img/turtle-shadow-square.jpg" alt="turtle-shadow">
+    <img src="./img/crimson-sentinel-square.jpg" alt="crimson-sentinel">
+    <img src="./img/raccoon-guardian-square.jpg" alt="raccoon-guardian">
+    <img src="./img/cardboard-crusader-square.jpg" alt="cardboard-crusader">
+</div>
+<h3>Code</h3>
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;sc-gallery.css&quot;&gt;
+    &lt;script src=&quot;sc-gallery.js&quot;&gt;&lt;/script&gt;
+    &lt;style&gt;
+        .sc-gallery.custom-1 {
+            width: 250px;
+            height: 250px;
+            padding: 1rem;
+        }
+
+        @media screen and (max-width: 749px) {
+            .sc-gallery.custom-1 {
+                width: 50vw;
+                height: 50vw;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;sc-gallery custom-1&quot;&gt;
+    &lt;img src=&quot;img/turtle-shadow.jpg&quot; alt=&quot;turtle-shadow&quot;&gt;
+    &lt;img src=&quot;img/crimson-sentinel.jpg&quot; alt=&quot;crimson-sentinel&quot;&gt;
+    &lt;img src=&quot;img/neon-vanguard.jpg&quot; alt=&quot;neon-vanguard&quot;&gt;
+    &lt;img src=&quot;img/raccoon-guardian.jpg&quot; alt=&quot;raccoon-guardian&quot;&gt;
+    &lt;img src=&quot;img/cardboard-crusader.jpg&quot; alt=&quot;cardboard-crusader&quot;&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<button class="toggle-btn"
+        title="Toggle Grid"
+        onclick="document.body.classList.toggle('grid');">#
+</button>
+</body>
+</html>
